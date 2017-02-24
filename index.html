@@ -3,12 +3,34 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!--
+Create a simple mockup of an email reader which uses React Router to handle routing. The app should have a sidebar that allows you to navigate between the inbox and the spam folder. Clicking on these should take you to a /inbox or /spam route (we recommend you use a dynamic route like /:mailbox_name). Each of the /inbox and /spam routes should display a list of emails. Clicking on an email should take you to a /:mailbox_name/:emailId route, which displays the email contents.
+
+-->
+
+<!--//import for react-->
+import React from 'react'; import CONTACTS from '.test/contacts.js'; import Contact from '.test/contact'; export default function ContactContainer(props) { const contact = CONTACTS[props.params.contactId]; return
+<Contact id={contact.id} name={contact.name} phoneNumber={contact.phoneNumber} />; };
 <title>Email React Starter</title>
 
 <link rel="stylesheet" href="css/index.css">
 
 <!-- Your HTML goes here -->
 <div>
+
+    <!--   create links to part of the application-->
+    export default function Contact(props) { return (
+    <div>
+        <strong>
+            <Link to={'/inbox/' + props.id}>
+                {props.name}
+            </Link>
+            <Link to={'/spam/' + props.id}>
+                {props.name}
+            </Link>
+        </strong> &nbsp; {props.phoneNumber}
+    </div>
+    ); };
 
 
 
